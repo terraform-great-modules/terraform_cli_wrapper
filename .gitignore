@@ -1,0 +1,10 @@
+
+# Ignore any configuration file, if present
+config.json
+
+
+# Virtualenv
+.venv
+.env
+venv
+env

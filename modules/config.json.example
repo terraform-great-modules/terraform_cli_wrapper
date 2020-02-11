@@ -1,0 +1,32 @@
+
+{"repositories":
+  [{"name": "cloudposse_terraform-null-label",
+    "destination": "cloudposse/terraform-null-label",
+    "upstream": "https://github.com/cloudposse/terraform-null-label.git",
+    "ref": "0.16.0",
+    "sha": "f25b7cb9dec61cea340b4c9005b89f38cfd9de9d"},
+   {"name": "cloudposse_terraform-aws-key-pair",
+    "destination": "cloudposse/terraform-aws-key-pair",
+    "upstream": "https://github.com/cloudposse/terraform-aws-key-pair.git",
+    "ref": "0.7.0",
+    "sha": "c5a76758168295999db9d3262b716496a2a255b3",
+    "patches":
+      ["diff --git a/main.tf b/main.tf\nindex 36a474c..475e98c 100644\n--- a/main.tf\n+++ b/main.tf\n@@ -1,5 +1,5 @@\n module \"label\" {\n-  source      = \"git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.16.0\"\n+  source      = \"../terraform-null-label\"\n   namespace   = var.namespace\n   stage       = var.stage\n   environment = var.environment\n"
+      ]
+   },
+   {"name": "cloudposse_terraform-aws-ec2-instance",
+    "destination": "cloudposse/terraform-aws-ec2-instance",
+    "upstream": "https://github.com/cloudposse/terraform-aws-ec2-instance.git",
+    "ref": "0.12.0",
+    "sha": "820e6bbc125687bb4224784ce21da0fb268f7a09",
+    "patches": ["Index: terraform-aws-ec2-instance/main.tf\n===================================================================\n--- terraform-aws-ec2-instance.orig/main.tf\n+++ terraform-aws-ec2-instance/main.tf\n@@ -64,7 +64,7 @@ data \"aws_ami\" \"info\" {\n }\n \n module \"label\" {\n-  source     = \"git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.14.1\"\n+  source     = \"../terraform-null-label\"\n   namespace  = var.namespace\n   stage      = var.stage\n   name       = var.name\n"]},
+  {"name": "terraform-modules_debian-ami",
+   "destination": "terraform_modules/terraform_aws_debian_ami",
+   "upstream": "https://github.com/terraform-great-modules/terraform_aws_debian_ami.git",
+   "branch": "master"},
+  {"name": "terraform-modules_aws-iam-policy",
+   "destination": "terraform_modules/terraform_aws_iam_policy",
+   "upstream": "https://github.com/terraform-great-modules/terraform_aws_iam_policy.git",
+   "branch": "master"}
+  ]
+}
